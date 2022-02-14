@@ -1,8 +1,5 @@
 import { Button } from "@mui/material";
-import Image from "next/image";
 import { useCallback } from "react";
-
-import metamaskIcon from "../../../public/metamask-fox.svg";
 import useContract from "../../hooks/useContract";
 
 export default function () {
@@ -15,7 +12,7 @@ export default function () {
     <Button
       variant="outlined"
       onClick={onClick}
-      startIcon={<Image src={metamaskIcon} width={25} height={25} />}
+      startIcon={<img src="/metamask-fox.svg" width={25} height={25} />}
     >
       Connect Wallet
     </Button>
