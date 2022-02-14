@@ -9,7 +9,7 @@ const env = {
 }
 module.exports = withTM({
   reactStrictMode: true,
-  assetPrefix: isProd ? '/cmdrnft/' : '',
+  assetPrefix: isProd ? '/nft-collections-viewer/' : '',
   images: {
     domains: [new URL(env.NEXT_IPFS_GATEWAY).hostname],
   },
