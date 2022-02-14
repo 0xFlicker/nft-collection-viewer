@@ -22,7 +22,7 @@ jobs:
       - name: Build
         run: |
           yarn install
-          yarn build
+          NEXT_GITHUB_PAGES_REPO=nft-collection-view NEXT_GITHUB_PAGES_HOST=https://cmdrnft.github.io yarn build
           yarn export
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

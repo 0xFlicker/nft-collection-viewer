@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import { useCallback } from "react";
 import useContract from "../../hooks/useContract";
+import { host } from "../../utils/paths";
 
 export default function () {
   const { connect } = useContract();
@@ -12,7 +13,7 @@ export default function () {
     <Button
       variant="outlined"
       onClick={onClick}
-      startIcon={<img src="/metamask-fox.svg" width={25} height={25} />}
+      startIcon={<img src={host("metamask-fox.svg")} width={25} height={25} />}
     >
       Connect Wallet
     </Button>
