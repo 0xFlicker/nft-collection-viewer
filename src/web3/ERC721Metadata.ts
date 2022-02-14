@@ -31,7 +31,10 @@ export interface ERC721MetadataInterface extends utils.Interface {
     "setApprovalForAll(address,bool)": FunctionFragment;
     "supportsInterface(bytes4)": FunctionFragment;
     "symbol()": FunctionFragment;
+    "tokenByIndex(uint256)": FunctionFragment;
+    "tokenOfOwnerByIndex(address,uint256)": FunctionFragment;
     "tokenURI(uint256)": FunctionFragment;
+    "totalSupply()": FunctionFragment;
     "transferFrom(address,address,uint256)": FunctionFragment;
   };
 
@@ -71,8 +74,20 @@ export interface ERC721MetadataInterface extends utils.Interface {
   ): string;
   encodeFunctionData(functionFragment: "symbol", values?: undefined): string;
   encodeFunctionData(
+    functionFragment: "tokenByIndex",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "tokenOfOwnerByIndex",
+    values: [string, BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "tokenURI",
     values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "totalSupply",
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "transferFrom",
@@ -108,7 +123,19 @@ export interface ERC721MetadataInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "symbol", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "tokenByIndex",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "tokenOfOwnerByIndex",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "tokenURI", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "totalSupply",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "transferFrom",
     data: BytesLike
@@ -232,10 +259,23 @@ export interface ERC721Metadata extends BaseContract {
 
     symbol(overrides?: CallOverrides): Promise<[string]>;
 
+    tokenByIndex(
+      index: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
+
+    tokenOfOwnerByIndex(
+      owner: string,
+      index: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber] & { tokenId: BigNumber }>;
+
     tokenURI(
       tokenId: BigNumberish,
       overrides?: CallOverrides
     ): Promise<[string]>;
+
+    totalSupply(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     transferFrom(
       from: string,
@@ -300,7 +340,20 @@ export interface ERC721Metadata extends BaseContract {
 
   symbol(overrides?: CallOverrides): Promise<string>;
 
+  tokenByIndex(
+    index: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
+
+  tokenOfOwnerByIndex(
+    owner: string,
+    index: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
+
   tokenURI(tokenId: BigNumberish, overrides?: CallOverrides): Promise<string>;
+
+  totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
   transferFrom(
     from: string,
@@ -363,7 +416,20 @@ export interface ERC721Metadata extends BaseContract {
 
     symbol(overrides?: CallOverrides): Promise<string>;
 
+    tokenByIndex(
+      index: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    tokenOfOwnerByIndex(
+      owner: string,
+      index: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     tokenURI(tokenId: BigNumberish, overrides?: CallOverrides): Promise<string>;
+
+    totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
     transferFrom(
       from: string,
@@ -467,10 +533,23 @@ export interface ERC721Metadata extends BaseContract {
 
     symbol(overrides?: CallOverrides): Promise<BigNumber>;
 
+    tokenByIndex(
+      index: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    tokenOfOwnerByIndex(
+      owner: string,
+      index: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     tokenURI(
       tokenId: BigNumberish,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
+
+    totalSupply(overrides?: CallOverrides): Promise<BigNumber>;
 
     transferFrom(
       from: string,
@@ -542,10 +621,23 @@ export interface ERC721Metadata extends BaseContract {
 
     symbol(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
+    tokenByIndex(
+      index: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    tokenOfOwnerByIndex(
+      owner: string,
+      index: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     tokenURI(
       tokenId: BigNumberish,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
+
+    totalSupply(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     transferFrom(
       from: string,

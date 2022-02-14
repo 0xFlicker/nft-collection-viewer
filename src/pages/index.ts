@@ -1,3 +1,3 @@
-import Root from "../layouts/root";
+import Homepage from "../layouts/Homepage";
 
-export default Root;
+export default Homepage;

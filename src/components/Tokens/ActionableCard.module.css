@@ -1,0 +1,98 @@
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 480px;
+}
+
+.rarity {
+  overflow: hidden;
+  position: relative;
+}
+
+.rare {
+  animation: shine 5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+  top: -110%;
+  left: -210%;
+  width: 100%;
+  height: 200%;
+  opacity: 0;
+  overflow: hidden;
+  transform: rotate(30deg);
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.02) 77%,
+    rgba(18, 41, 255, 0.15) 92%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.epic {
+  animation: shine 5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+  top: -110%;
+  left: -210%;
+  width: 100%;
+  height: 200%;
+  opacity: 0;
+  overflow: hidden;
+  transform: rotate(30deg);
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(217, 67, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.legendary {
+  animation: shine 5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+  top: -110%;
+  left: -210%;
+  width: 100%;
+  height: 200%;
+  opacity: 0;
+  overflow: hidden;
+  transform: rotate(30deg);
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.07) 77%,
+    rgba(255, 184, 51, 0.45) 92%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@keyframes shine {
+  0% {
+    opacity: 1;
+    top: -30%;
+    left: -150%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+  }
+  20% {
+    opacity: 0;
+    top: -30%;
+    left: 30%;
+    transition-property: left, top, opacity;
+  }
+  100% {
+    opacity: 0;
+    top: -30%;
+    left: 30%;
+    transition-property: left, top, opacity;
+  }
+}
