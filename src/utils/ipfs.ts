@@ -7,6 +7,9 @@ export function stripIpfsProtocol(maybeIpfsProtocol: string) {
 }
 
 export function ipfsGatewayUrl(ipfsUrl: string) {
-  const ipfsPath = stripIpfsProtocol(ipfsUrl);
-  return `${process.env.NEXT_IPFS_GATEWAY}${ipfsPath}`;
+  if (new URL(ipfsUrl).protocol === "ipfs:") {
+    const ipfsPath = stripIpfsProtocol(ipfsUrl);
+    return `${process.env.NEXT_IPFS_GATEWAY}${ipfsPath}`;
+  }
+  return ipfsUrl;
 }

@@ -23,7 +23,7 @@ interface IRarityProps {
 }
 
 const RARITY_BREAKPOINTS = {
-  RARE: 0.4,
+  RARE: 0.8,
   EPIC: 0.1,
   LEGENDARY: 0.03,
 };
