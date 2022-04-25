@@ -22,7 +22,7 @@ jobs:
       - name: Build
         env:
           NEXT_GITHUB_PAGES_REPO: nft-collection-viewer
-          NEXT_GITHUB_PAGES_HOST: https://cmdrnft.github.io
+          NEXT_GITHUB_PAGES_HOST: https://0xflicker.github.io
         run: |
           yarn install
           NODE_ENV=production yarn build
