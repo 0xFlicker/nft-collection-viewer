@@ -8,13 +8,16 @@
     "start": "next start",
     "export": "next export",
     "lint": "next lint",
-    "parse": "node ./scripts/parse.js"
+    "parse": "node ./scripts/parse.js",
+    "cli": "node ./scripts/app.mjs"
   },
   "devDependencies": {
     "@openzeppelin/contracts": "^4.4.2",
     "@typechain/ethers-v5": "^9.0.0",
     "@types/node": "^17.0.15",
     "@types/react": "^17.0.39",
+    "cli-progress": "^3.10.0",
+    "commander": "^9.0.0",
     "csv-parse": "^5.0.4",
     "eslint": "^7.12.1",
     "eslint-config-next": "12.0.7",
@@ -24,6 +27,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.0.0",
     "next-transpile-modules": "^9.0.0",
+    "node-fetch": "^3.2.0",
     "typechain": "^7.0.0",
     "typescript": "^4.5.5"
   },
@@ -38,7 +42,9 @@
     "classnames": "^2.3.1",
     "ethers": "^5.5.4",
     "next": "^12.0.10",
+    "ramda": "^0.28.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "rxjs": "^7.5.4"
   }
 }
